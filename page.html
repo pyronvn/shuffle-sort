@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+
+  <body>
+    <div class="title">Shuffle and Sort</div>
+    <div class="wrapper">
+      <div id="number-layout"></div>
+      <div class="button-wrapper">
+        <div class="shuffle-button">
+          <button
+            id="shuffle-button"
+            class="button-shadow"
+            type="button"
+            onclick="randomize()"
+          >
+            Shuffle
+          </button>
+        </div>
+        <div class="sort-button">
+          <button
+            id="sort-button"
+            class="button-shadow"
+            type="button"
+            onclick="init()"
+          >
+            Sort
+          </button>
+        </div>
+      </div>
+      <div style="text-align: center">Shuffle and Sort by <i>Naveen</i></div>
+    </div>
+    <script type="text/javascript" src="grid-operation.js"></script>
+  </body>
+</html>

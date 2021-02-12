@@ -1,0 +1,118 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+.title {
+  text-align: center;
+  padding: 10px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 600px 200px;
+  column-gap: 10px;
+  grid-template-areas: " number-area action-area ";
+}
+
+#number-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-area: number-area;
+  grid-template-areas:
+    "action-area"
+    "number-area";
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  font-size: 3em;
+  height: 150px;
+  color: white;
+}
+
+.button-wrapper {
+  display: grid;
+  grid-template-rows: repeat(2, 75px);
+  grid-area: action-area;
+}
+
+button {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #72c3dc;
+  background-color: #72c3dc;
+  font-size: 1rem;
+  color: white;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button-shadow {
+  box-shadow: 2px 2px 5px gray;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: auto;
+}
+
+.color-band {
+  position: absolute;
+  z-index: 2;
+  height: inherit;
+  width: 10px;
+}
+
+@media (max-width: 376px) {
+  .wrapper {
+    grid-template-areas:
+      "action-area"
+      "number-area";
+
+    grid-template-columns: auto;
+    row-gap: 30px;
+  }
+
+  #number-layout {
+    grid-template-columns: auto;
+    row-gap: 5px;
+  }
+
+  .item {
+    height: 40px;
+    width: 100%;
+    color: black;
+    font-size: 2em;
+    background: linear-gradient(
+      90deg,
+      #efefef 0,
+      rgb(0, 0, 0, 0) 0,
+      rgb(0, 0, 0, 0) 10px,
+      #efefef 0
+    ) !important;
+    border: none;
+  }
+
+  .shuffle-button {
+    grid-area: shuffle-btn-area;
+  }
+
+  .sort-button {
+    grid-area: sort-btn-area;
+  }
+  .button-wrapper {
+    grid-template-areas: "shuffle-btn-area sort-btn-area";
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 10px;
+  }
+  button {
+    width: 100%;
+  }
+}

@@ -69,7 +69,7 @@ button[disabled] {
   width: 10px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .wrapper {
     grid-template-areas:
       "action-area"
